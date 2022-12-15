@@ -1,0 +1,16 @@
+{
+"quran" : "Quran" ,
+"sebha" : "Tasbeh" ,
+"hadeth" : "Hadeth" ,
+"radio" : "Radio" ,
+"suraName" : "Sura Name" ,
+"islami" : "Islami" ,
+"elAhadeth" : "El Ahadeth" ,
+"language" : "Language" ,
+"english" : "English" ,
+"arabic" : "Arabic" ,
+"theming" : "Theming" ,
+"dark" : "Dark" ,
+"light" : "Light" ,
+"number_of_tasbehat" : "Number of tasbehat"
+}

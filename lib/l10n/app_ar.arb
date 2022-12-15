@@ -1,0 +1,16 @@
+{
+"quran" : "قران" ,
+"sebha" : "تسبيح" ,
+"hadeth" : "حديث" ,
+"radio" : "راديو" ,
+"suraName" : "اسم السورة" ,
+"islami" : "اسلامى" ,
+"elAhadeth" : "اسم الحديث" ,
+"language" : "اللغه" ,
+"english" : "الانجليزيه" ,
+"arabic" : "العربيه" ,
+"theming" : "النمط" ,
+"dark" : "الليلى" ,
+"light" : "النهارى" ,
+"number_of_tasbehat" : "عدد التسبيحات"
+}

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/appLanguageProvider.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -24,6 +27,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -31,19 +35,33 @@ class _SebhaTabState extends State<SebhaTab> {
           AnimatedRotation(
               turns: turnes,
               duration: Duration(seconds: 1),
-              child: Image(image: AssetImage("assets/images/sebha_image.png"))),
+              child: Image(
+                  image: provider.apptheme == ThemeMode.light
+                      ? AssetImage("assets/images/sebha_image.png")
+                      : AssetImage("assets/images/sebha_image.png"))),
           Container(
             child: Text(
-              "Number of tasbehat",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+              AppLocalizations.of(context)!.number_of_tasbehat,
+              style: provider.apptheme == ThemeMode.light
+                  ? TextStyle(fontSize: 25, fontWeight: FontWeight.w400)
+                  : TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),
             ),
           ),
           Container(
-            decoration: BoxDecoration(
-              border: Border(),
-              borderRadius: BorderRadius.circular(30),
-              color: Color(0xFFB7935F),
-            ),
+            decoration: provider.apptheme == ThemeMode.light
+                ? BoxDecoration(
+                    border: Border(),
+                    borderRadius: BorderRadius.circular(30),
+                    color: Color(0xFFB7935F),
+                  )
+                : BoxDecoration(
+                    border: Border(),
+                    borderRadius: BorderRadius.circular(30),
+                    color: Color(0xFF141A1E),
+                  ),
             alignment: Alignment.center,
             height: 90,
             width: 70,
@@ -70,7 +88,9 @@ class _SebhaTabState extends State<SebhaTab> {
                       fontWeight: FontWeight.bold),
                 ),
                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xFFB7935F),
+                    primary: provider.apptheme == ThemeMode.light
+                        ? Color(0xFFB7935F)
+                        : Color(0xFFFACC1D),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)))),
           )
